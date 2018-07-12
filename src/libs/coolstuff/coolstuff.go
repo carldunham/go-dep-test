@@ -1,7 +1,20 @@
 package coolstuff
 
-// A is pretty cool
+import (
+	"fmt"
+
+	"github.com/google/uuid"
+)
+
+// CoolThing does what is says
 //
-func A() string {
-	return "💯"
+type CoolThing struct {
+	ID    uuid.UUID
+	Value string
+}
+
+// ToString is pretty cool too
+//
+func (c *CoolThing) String() string {
+	return fmt.Sprintf("%v: %q", c.ID, c.Value)
 }
